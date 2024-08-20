@@ -3,4 +3,30 @@
   <groupId>com.johari.company</groupId>
   <artifactId>SweetManagementSystem</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  
+     <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>7.18.1</version>
+       </dependency>
+  
+  
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.18.1</version>
+  </dependency>
+
+      <dependency> 
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>7.18.1</version>
+    <scope>test</scope>
+       </dependency>
+       
+       
+      
+  </dependencies>
 </project>
