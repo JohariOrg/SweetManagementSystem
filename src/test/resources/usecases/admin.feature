@@ -9,3 +9,8 @@ Feature: Admin management
     Given the admin is logged in
     When the admin adds a new store owner
     Then the store owner should be added successfully
+
+  Scenario: Admin adds a raw material supplier
+    Given the admin is logged in
+    When the admin adds a new raw material supplier
+    Then the supplier should be added successfully

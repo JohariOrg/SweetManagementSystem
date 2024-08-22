@@ -2,10 +2,13 @@ package com.sweetmanagementsystem.management.admin;
 
 import com.sweetmanagementsystem.management.Admin;
 import com.sweetmanagementsystem.management.StoreOwner;
+import com.sweetmanagementsystem.management.Supplier;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import static org.junit.Assert.assertNotNull;
+
 
 public class AdminStepDefinitions {
 
@@ -49,4 +52,17 @@ public class AdminStepDefinitions {
         assert(admin.getUser("storeOwner1") != null);
     }
 
+
+    @When("the admin adds a new raw material supplier")
+    public void the_admin_adds_a_new_raw_material_supplier() {
+        // Admin adds a new supplier
+        Supplier supplier = new Supplier("supplier1", "password");
+        admin.addUser(supplier);
+    }
+
+    @Then("the supplier should be added successfully")
+    public void the_supplier_should_be_added_successfully() {
+        // Verify that the supplier was added successfully
+        assertNotNull(admin.getUser("supplier1"));
+    }
 }
