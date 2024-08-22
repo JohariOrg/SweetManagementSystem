@@ -1,6 +1,7 @@
 package com.sweetmanagementsystem.management.admin;
 
 import com.sweetmanagementsystem.management.Admin;
+import com.sweetmanagementsystem.management.StoreOwner;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -26,6 +27,26 @@ public class AdminStepDefinitions {
     public void the_admin_should_be_logged_in_successfully() {
         // Check that the admin is successfully logged in
         assert(admin.isLoggedIn());
+    }
+
+    @Given("the admin is logged in")
+    public void the_admin_is_logged_in() {
+        // Simulate the admin already being logged in
+        admin = new Admin("adminUsername", "adminPassword");
+        admin.login("adminUsername", "adminPassword");
+    }
+
+    @When("the admin adds a new store owner")
+    public void the_admin_adds_a_new_store_owner() {
+        // Admin adds a new store owner
+        StoreOwner storeOwner = new StoreOwner("storeOwner1", "password");
+        admin.addUser(storeOwner);
+    }
+
+    @Then("the store owner should be added successfully")
+    public void the_store_owner_should_be_added_successfully() {
+        // Verify the store owner was successfully added
+        assert(admin.getUser("storeOwner1") != null);
     }
 
 }
