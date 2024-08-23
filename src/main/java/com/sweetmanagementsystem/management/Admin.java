@@ -7,7 +7,7 @@ public class Admin extends User {
     }
 
     public void login(String username, String password) {
-        if (username.equals("admin") && password.equals("admin@123")) {
+        if (username.equals("adminUsername") && password.equals("adminPassword")) {
             this.setLoggedIn(true);
         }
     }
