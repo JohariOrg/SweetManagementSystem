@@ -26,4 +26,13 @@ public class User {
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
     }
+
+    // Universal login method for all users
+    public boolean login(String username, String password) {
+        if (this.username.equals(username) && this.password.equals(password)) {
+            this.loggedIn = true;
+            return true;
+        }
+        return false;
+    }
 }
