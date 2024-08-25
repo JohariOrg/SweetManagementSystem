@@ -47,4 +47,10 @@ public class Product {
     public void resetDiscount() {
         this.discountPercentage = 0.0;
     }
+
+	public void setPrice(double newPrice) {
+		// TODO Auto-generated method stub
+		this.price = newPrice;
+		
+	}
 }

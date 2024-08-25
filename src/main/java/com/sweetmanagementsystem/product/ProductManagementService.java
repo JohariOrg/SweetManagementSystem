@@ -20,6 +20,7 @@ public class ProductManagementService {
     public boolean updateProduct(String productName, double newPrice, int newQuantity) {
         Product product = products.get(productName);
         if (product != null) {
+            product.setPrice(newPrice);
             product.setQuantity(newQuantity);
             return true;
         }
@@ -34,5 +35,16 @@ public class ProductManagementService {
     // Retrieve all products
     public Map<String, Product> getAllProducts() {
         return products;
+    }
+
+    // Print all products
+    public void printAllProducts() {
+        if (products.isEmpty()) {
+            System.out.println("No products available.");
+        } else {
+            for (Product product : products.values()) {
+                System.out.println(product);
+            }
+        }
     }
 }

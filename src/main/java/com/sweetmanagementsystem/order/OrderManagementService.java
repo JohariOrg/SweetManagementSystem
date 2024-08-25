@@ -35,4 +35,15 @@ public class OrderManagementService {
     public Map<String, Order> getAllOrders() {
         return orders;
     }
+
+    // Print all orders
+    public void printAllOrders() {
+        if (orders.isEmpty()) {
+            System.out.println("No orders available.");
+        } else {
+            for (Order order : orders.values()) {
+                System.out.println("Order ID: " + order.getOrderId() + ", Product: " + order.getProductName() + ", Quantity: " + order.getQuantity() + ", Status: " + order.getStatus());
+            }
+        }
+    }
 }
